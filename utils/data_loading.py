@@ -63,7 +63,7 @@ def load_graph_data(training_config, device):
 
         # shape = (N, FIN), where N is the number of nodes and FIN is the number of input features
         node_features_csr = pickle_read(os.path.join(CORA_PATH, 'node_features.csr'))
-        # shape = (N, 1)
+        # shape = (N,)
         node_labels_npy = pickle_read(os.path.join(CORA_PATH, 'node_labels.npy'))
         # shape = (N, number of neighboring nodes) <- this is a dictionary not a matrix!
         adjacency_list_dict = pickle_read(os.path.join(CORA_PATH, 'adjacency_list.dict'))
