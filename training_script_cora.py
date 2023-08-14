@@ -54,7 +54,7 @@ def get_main_loop(config, gat, cross_entropy_loss, optimizer, node_features, nod
         node_indices = get_node_indices(phase)
         gt_node_labels = get_node_labels(phase)  # gt stands for ground truth
 
-        # Do a forwards pass and extract only the relevant node scores (train/val or test ones)
+        # Do a forward pass and extract only the relevant node scores (train/val or test ones)
         # Note: [0] just extracts the node_features part of the data (index 1 contains the edge_index)
         # shape = (N, C) where N is the number of nodes in the split (train/val/test) and C is the number of classes
         nodes_unnormalized_scores = gat(graph_data)[0].index_select(node_dim, node_indices)
